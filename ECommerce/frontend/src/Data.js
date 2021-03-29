@@ -42,7 +42,7 @@ const Data = {
 			category: "gaming",
 			image: "/images/game1.jpeg",
 			price: 59,
-			countInStock: 11,
+			countInStock: 13,
 			brand: "Sony",
 			rating: 4.5,
 			numReviews: 42,

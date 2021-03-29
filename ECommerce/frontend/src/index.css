@@ -74,7 +74,10 @@ ul {
 li {
   margin-top: 1rem;
 }
-button {
+button, 
+select, 
+textarea,
+input {
   padding: 1rem;
   border-radius: .5rem;
   border: 0.1rem #dad9d9 solid;
@@ -84,12 +87,22 @@ button {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+}
+button {
   background-color: #dcdcdc;
   cursor: pointer;
 }
-button:hover {
+button:hover,
+select:hover,
+textarea:hover,
+input:hover
+  {
   border: .1rem #404040 solid;
 }
+
+
+
 button.primary {
   background-color: #e9ac02;
 }
@@ -190,8 +203,7 @@ img.large {
   color: #2020a0;
   background-color: #e0e0ff;
 }
-.alert-error {
+.alert-danger {
   color: #a02020;
   background-color: #e0d4d4;
-  color: rgb(89, 170, 188);
 }
