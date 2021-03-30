@@ -104,11 +104,12 @@ input:hover
 
 
 button.primary {
-  background-color: #e9ac02;
+  background-color: #03c386;
 }
 button.block {
   width: 100%;
 }
+/* Header */
 header a {
   color: white;
   padding: 1rem;
@@ -118,6 +119,14 @@ a.brand {
   color: white;
   font-size: 3rem;
   font-weight: bold;
+}
+.badge{
+  background-color: #03c386;
+  color: white;
+  border-radius: 50%;
+  padding: .2rem .7rem;
+  font-size: 1.4rem;
+  margin-left: .5rem;
 }
 
 .row {
@@ -143,6 +152,14 @@ img {
 }
 .col-2 {
   flex: 2 1 50rem;
+}
+.min-30 {
+  min-width: 30rem;
+}
+/* Images */
+img.small {
+  max-width: 5rem;
+  width: 100%;
 }
 img.medium {
   max-width: 29rem;
