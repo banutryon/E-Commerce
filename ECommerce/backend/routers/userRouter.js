@@ -3,7 +3,10 @@ import expressAsyncHandler from "express-async-handler";
 import bcrypt from "bcryptjs";
 import Data from "../Data.js";
 import User from "../models/userModel.js";
+import { generateToken } from "../utils.js";
+
 const userRouter = express.Router();
+
 userRouter.get(
 	"/seed",
 	expressAsyncHandler(async (req, res) => {
@@ -20,25 +23,20 @@ userRouter.get(
 userRouter.post(
 	"/signin",
 	expressAsyncHandler(async (req, res) => {
-		try {
-			const user = await User.findOne({ email: req.body.email });
-			if (user) {
-				if (bcrypt.compairSync(req.body.password, user.password)) {
-					res.send({
-						_id: user._id,
-						name: user.name,
-						email: user.email,
-						isAdmin: user.isAdmin,
-						token: generateToken(user),
-					});
-					return;
-				}
+		const user = await User.findOne({ email: req.body.email });
+		if (user) {
+			if (bcrypt.compareSync(req.body.password, user.password)) {
+				res.send({
+					_id: user._id,
+					name: user.name,
+					email: user.email,
+					isAdmin: user.isAdmin,
+					token: generateToken(user),
+				});
+				return;
 			}
-			res.status(401).send({ message: "Invalid email user or password" });
-		} catch (error) {
-			res.send("you have an error");
-			console.log(error);
 		}
+		res.status(401).send({ message: "Invalid email user or password" });
 	})
 );
 export default userRouter;
