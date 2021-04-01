@@ -6,8 +6,13 @@ const userRouter = express.Router();
 userRouter.get(
 	"/seed",
 	expressAsyncHandler(async (req, res) => {
-		const createdUsers = await User.insertMany(Data.users);
-		res.send({ createdUsers });
+		try {
+			const createdUsers = await User.insertMany(Data.users);
+			res.send({ createdUsers });
+		} catch (error) {
+			res.send("you have an error");
+			console.log(error);
+		}
 	})
 );
 export default userRouter;

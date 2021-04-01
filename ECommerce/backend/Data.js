@@ -17,7 +17,6 @@ const Data = {
 	],
 	products: [
 		{
-			_id: "1",
 			name: "Playstation 5 Console",
 			category: "gaming",
 			image: "/images/ps5Game8.jpg",
@@ -29,7 +28,6 @@ const Data = {
 			description: `Sony's newest console for the next generation of gaming`,
 		},
 		{
-			_id: "2",
 			name: "FF7 Remake ",
 			category: "gaming",
 			image: "/images/game12.jpeg",
@@ -41,7 +39,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "3",
 			name: "Demon's Souls ",
 			category: "gaming",
 			image: "/images/game7.jpeg",
@@ -53,7 +50,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "4",
 			name: "Assassins Creed Valhalla",
 			category: "gaming",
 			image: "/images/game1.jpeg",
@@ -65,7 +61,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "5",
 			name: "Spider Man Miles Morales",
 			category: "gaming",
 			image: "/images/game4.jpeg",
@@ -77,7 +72,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "6",
 			name: "Hit Man",
 			category: "gaming",
 			image: "/images/game2.jpeg",
@@ -89,7 +83,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "7",
 			name: "Devil May Cry 5",
 			category: "gaming",
 			image: "/images/game3.jpeg",
@@ -101,7 +94,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "8",
 			name: "Rainbow six",
 			category: "gaming",
 			image: "/images/game5.jpeg",
@@ -113,7 +105,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "9",
 			name: "Call of Duty",
 			category: "gaming",
 			image: "/images/game6.jpeg",
@@ -125,7 +116,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "10",
 			name: "Village Resident Evil",
 			category: "gaming",
 			image: "/images/game8.jpeg",
@@ -137,7 +127,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "11",
 			name: "Ratchet and Clank",
 			category: "gaming",
 			image: "/images/game9.jpeg",
@@ -149,7 +138,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "12",
 			name: "MK 11",
 			category: "gaming",
 			image: "/images/game10.jpeg",
@@ -161,7 +149,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "13",
 			name: "Returnal",
 			category: "gaming",
 			image: "/images/game11.jpeg",
@@ -173,7 +160,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "14",
 			name: "The Show",
 			category: "gaming",
 			image: "/images/game13.jpeg",
@@ -185,7 +171,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "15",
 			name: "Sack Boy",
 			category: "gaming",
 			image: "/images/game14.jpeg",
@@ -197,7 +182,6 @@ const Data = {
 			description: `PS5 game`,
 		},
 		{
-			_id: "16",
 			name: "Immortals Fenyx Rising",
 			category: "gaming",
 			image: "/images/game15.jpeg",
