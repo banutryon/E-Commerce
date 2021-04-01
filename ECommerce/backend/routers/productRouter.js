@@ -11,7 +11,7 @@ productRouter.get(
 			const products = await Product.find({});
 			res.send(products);
 		} catch (error) {
-			res.send("you have an error");
+			res.send("you have an error on route '/' ");
 			console.log(error);
 		}
 	})
@@ -25,7 +25,7 @@ productRouter.get(
 			const createdProducts = await Product.insertMany(Data.products);
 			res.send({ createdProducts });
 		} catch (error) {
-			res.send("you have an error");
+			res.send("you have an error on route '/seed'");
 			console.log(error);
 		}
 	})
@@ -42,7 +42,7 @@ productRouter.get(
 				res.status(404).send({ message: "Product Not Found" });
 			}
 		} catch (error) {
-			res.send("you have an error");
+			res.send("you have an error on route '/:id' ");
 			console.log(error);
 		}
 	})
