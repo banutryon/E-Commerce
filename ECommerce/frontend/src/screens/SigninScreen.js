@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { signin } from "../actions/userActions";
 
 export default function SigninScreen() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
+	const dispatch = useDispatch();
 	const submitHandler = (e) => {
-		e.preventDafult();
-		// TODO: sighin action
+		e.preventDefault();
+		dispatch(signin(email, password));
 	};
 
 	return (
@@ -22,7 +26,7 @@ export default function SigninScreen() {
 						id="email"
 						placeholder="Enter email"
 						required
-						onChange={(e) => setEmail(e.tartet.value)}
+						onChange={(e) => setEmail(e.target.value)}
 					></input>
 				</div>
 				<div>
@@ -32,7 +36,7 @@ export default function SigninScreen() {
 						id="password"
 						placeholder="Enter password"
 						required
-						onChange={(e) => setPassword(e.tartet.value)}
+						onChange={(e) => setPassword(e.target.value)}
 					></input>
 				</div>
 				<div>
