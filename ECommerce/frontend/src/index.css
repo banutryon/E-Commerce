@@ -204,7 +204,9 @@ img.large {
   color: #545454;
 }
 /* Alert */
-
+.loading {
+  display: block !important;
+}
 .success {
   color: #20a020;
 }
