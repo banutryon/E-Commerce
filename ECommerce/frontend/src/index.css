@@ -296,7 +296,7 @@ img.large {
 }
 
 .table tbody tr:nth-of-type(odd) {
-  background-color: #f4f4f4;
+  background-color: #e4eaef;
 }
 .table td, .table th {
   text-align: left;
