@@ -2,6 +2,7 @@ import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
 import Data from "../Data.js";
+import { isAdmin, isAuth } from "../utils.js";
 const productRouter = express.Router();
 
 productRouter.get(
@@ -45,6 +46,27 @@ productRouter.get(
 			res.send("you have an error on route '/:id' ");
 			console.log(error);
 		}
+	})
+);
+
+productRouter.post(
+	"/",
+	isAuth,
+	isAdmin,
+	expressAsyncHandler(async (req, res) => {
+		const product = new Product({
+			name: "sample name" + Date.now(),
+			image: "/images/addImage.png",
+			price: 0,
+			category: "sample category",
+			brand: "sample brand",
+			countInStock: 0,
+			rating: 0,
+			numReviews: 0,
+			description: "sample description",
+		});
+		const createdProduct = await product.save();
+		res.send({ message: "Product Created", product: createdProduct });
 	})
 );
 export default productRouter;
