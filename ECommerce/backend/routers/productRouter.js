@@ -1,7 +1,6 @@
 import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
-import Data from "../Data.js";
 import { isAdmin, isAuth } from "../utils.js";
 const productRouter = express.Router();
 

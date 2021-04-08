@@ -1,5 +1,4 @@
 import Axios from "axios";
-import expressAsyncHandler from "express-async-handler";
 import {
 	PRODUCT_DETAILS_FAIL,
 	PRODUCT_DETAILS_REQUEST,
@@ -96,7 +95,6 @@ export const deleteProduct = (productId) => async (dispatch, getState) => {
 	const {
 		userSignin: { userInfo },
 	} = getState();
-
 	try {
 		const { data } = Axios.delete(`/api/products/${productId}`, {
 			headers: { Authorization: `Bearer ${userInfo.token}` },
