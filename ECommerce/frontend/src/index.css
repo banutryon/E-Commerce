@@ -52,6 +52,7 @@ footer {
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
+
 }
 
 h2 {
@@ -104,7 +105,7 @@ input:hover
 
 
 button.primary {
-  background-color: #03c386;
+  background-color: #2aa981;
 }
 button.block {
   width: 100%;

@@ -18,19 +18,19 @@ productRouter.get(
 	})
 );
 
-productRouter.get(
-	"/seed",
-	expressAsyncHandler(async (req, res) => {
-		try {
-			await Product.remove({});
-			const createdProducts = await Product.insertMany(Data.products);
-			res.send({ createdProducts });
-		} catch (error) {
-			res.send("you have an error on route '/seed'");
-			console.log(error);
-		}
-	})
-);
+// productRouter.get(
+// 	"/seed",
+// 	expressAsyncHandler(async (req, res) => {
+// 		try {
+// 			await Product.remove({});
+// 			const createdProducts = await Product.insertMany(Data.products);
+// 			res.send({ createdProducts });
+// 		} catch (error) {
+// 			res.send("you have an error on route '/seed'");
+// 			console.log(error);
+// 		}
+// 	})
+// );
 
 productRouter.get(
 	"/:id",
@@ -67,6 +67,29 @@ productRouter.post(
 		});
 		const createdProduct = await product.save();
 		res.send({ message: "Product Created", product: createdProduct });
+	})
+);
+
+productRouter.put(
+	"/:id",
+	isAuth,
+	isAdmin,
+	expressAsyncHandler(async (req, res) => {
+		const productId = req.params.id;
+		const product = await Product.findById(productId);
+		if (product) {
+			product.name = req.body.name;
+			product.price = req.body.price;
+			product.image = req.body.image;
+			product.category = req.body.category;
+			product.brand = req.body.brand;
+			product.countInStock = req.body.countInStock;
+			product.description = req.body.description;
+			const updatedProduct = await product.save();
+			res.send({ message: "Product Updated", product: updatedProduct });
+		} else {
+			res.status(404).send({ message: "Product Not Found" });
+		}
 	})
 );
 export default productRouter;

@@ -49,7 +49,7 @@ export default function ProductListScreen(props) {
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>Image</th>
+							{/* <th>Image</th> */}
 							<th>NAME</th>
 							<th>PRICE</th>
 							<th>CATEGORY</th>
@@ -61,11 +61,11 @@ export default function ProductListScreen(props) {
 						{products.map((product) => (
 							<tr key={product._id}>
 								<td>{product._id}</td>
-								<img
+								{/* <img
 									src={product.image}
 									alt={product.name}
 									className="small"
-								></img>
+								></img> */}
 								<td>{product.name}</td>
 								<td>{product.price}</td>
 								<td>{product.category}</td>
