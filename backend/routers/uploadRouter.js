@@ -1,7 +1,7 @@
 import multer from "multer";
 import express from "express";
-
 import { isAuth } from "../utils.js";
+
 const uploadRouter = express.Router();
 
 const storage = multer.diskStorage({
@@ -9,16 +9,9 @@ const storage = multer.diskStorage({
 		cb(null, "uploads/");
 	},
 	filename(req, file, cb) {
-		cb(
-			null,
-			`${Date.now()}.jpeg` ||
-				`${Date.now()}.jpg` ||
-				`${Date.now()}.png` ||
-				`${Date.now()}.svg`
-		);
+		cb(null, `${Date.now()}.jpeg`);
 	},
 });
-
 const upload = multer({ storage });
 
 uploadRouter.post("/", isAuth, upload.single("image"), (req, res) => {
