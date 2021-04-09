@@ -17,19 +17,19 @@ productRouter.get(
 	})
 );
 
-// productRouter.get(
-// 	"/seed",
-// 	expressAsyncHandler(async (req, res) => {
-// 		try {
-// 			await Product.remove({});
-// 			const createdProducts = await Product.insertMany(Data.products);
-// 			res.send({ createdProducts });
-// 		} catch (error) {
-// 			res.send("you have an error on route '/seed'");
-// 			console.log(error);
-// 		}
-// 	})
-// );
+productRouter.get(
+	"/seed",
+	expressAsyncHandler(async (req, res) => {
+		try {
+			await Product.remove({});
+			const createdProducts = await Product.insertMany(Data.products);
+			res.send({ createdProducts });
+		} catch (error) {
+			res.send("you have an error on route '/seed'");
+			console.log(error);
+		}
+	})
+);
 
 productRouter.get(
 	"/:id",
