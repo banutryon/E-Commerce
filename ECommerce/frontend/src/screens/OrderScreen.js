@@ -201,6 +201,10 @@ export default function OrderScreen(props) {
 							)}
 							{userInfo.isAdmin && order.isPaid && !order.isDelivered && (
 								<li>
+									{loadingDeliver && <LoadingBox></LoadingBox>}
+									{errorDeliver && (
+										<MessageBox variant="danger">{errorDeliver}</MessageBox>
+									)}
 									<button
 										type="button"
 										className="primary block"
@@ -217,3 +221,5 @@ export default function OrderScreen(props) {
 		</div>
 	);
 }
+
+// test
